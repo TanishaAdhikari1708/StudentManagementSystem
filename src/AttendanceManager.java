@@ -26,12 +26,14 @@ public class AttendanceManager {
         }
     }
 
-    // Generate a simple attendance report
+    // Generate a detailed attendance report
     public void generateReport() {
-        System.out.println("Attendance Report:");
-        System.out.println("Total Present: " + presentStudents.size());
-        for (String name : presentStudents) {
-            System.out.println("- " + name);
+        System.out.println("====== Attendance Report ======");
+        System.out.println("Total Students Present: " + presentStudents.size());
+        System.out.println("-------------------------------");
+        for (int i = 0; i < presentStudents.size(); i++) {
+            System.out.println((i+1) + ". " + presentStudents.get(i));
         }
+        System.out.println("===============================");
     }
 }
