@@ -8,9 +8,14 @@ public class AttendanceManager {
         presentStudents = new ArrayList<>();
     }
 
-    // Mark a student as present
+    // Mark a student as present (avoid duplicates)
     public void markPresent(String studentName) {
-        presentStudents.add(studentName);
+        if (!presentStudents.contains(studentName)) {
+            presentStudents.add(studentName);
+            System.out.println(studentName + " marked present.");
+        } else {
+            System.out.println(studentName + " is already marked present.");
+        }
     }
 
     // Print all present students
