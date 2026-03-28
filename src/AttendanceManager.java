@@ -2,27 +2,27 @@
 import java.util.ArrayList;
 
 public class AttendanceManager {
-    private ArrayList<String> presentStudents;
+    private ArrayList<Student> presentStudents;
 
     public AttendanceManager() {
         presentStudents = new ArrayList<>();
     }
 
-    // Mark a student as present (avoid duplicates)
-    public void markPresent(String studentName) {
-        if (!presentStudents.contains(studentName)) {
-            presentStudents.add(studentName);
-            System.out.println(studentName + " marked present.");
+    // Mark a student present by Student object
+    public void markPresent(Student student) {
+        if (!presentStudents.contains(student)) {
+            presentStudents.add(student);
+            System.out.println(student.getName() + " marked present.");
         } else {
-            System.out.println(studentName + " is already marked present.");
+            System.out.println(student.getName() + " is already marked present.");
         }
     }
 
     // Print all present students
     public void printAttendance() {
         System.out.println("Attendance List:");
-        for (String name : presentStudents) {
-            System.out.println(name);
+        for (Student s : presentStudents) {
+            System.out.println(s);
         }
     }
 
