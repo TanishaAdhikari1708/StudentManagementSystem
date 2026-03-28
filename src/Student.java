@@ -1,18 +1,31 @@
 // src/Student.java
 public class Student {
-    private int studentId;
     private String name;
+    private int id;
 
-    public Student(int studentId, String name) {
-        this.studentId = studentId;
+    public Student(String name, int id) {
         this.name = name;
-    }
-
-    public int getStudentId() {
-        return studentId;
+        this.id = id;
     }
 
     public String getName() {
         return name;
+    }
+
+    public void setName(String name) {   // new method
+        this.name = name;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {          // new method
+        this.id = id;
+    }
+
+    @Override
+    public String toString() {             // helpful for printing
+        return "ID: " + id + ", Name: " + name;
     }
 }
